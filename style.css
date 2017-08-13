@@ -44,6 +44,7 @@ img
 	.col-xs-10{width:83.33%;}
 	.col-xs-11{width:91.66%;}
 	.col-xs-12{width:100%;}
+
 }
 
 
@@ -67,9 +68,46 @@ img
 		display: none;
 	}
 
+	/*nav bar*/
+	.nav-bar
+	{
+		padding: 10px;
+	}
 
 
+	/*about*/
 
+    .img-about
+    {
+	transition:1s;
+	position: relative;
+    }
+
+    .about-text
+    {
+    text-align: center;
+    color: #616161;
+    padding: 15px;
+    opacity: 1;
+    transition:1s;
+    }
+
+   .member
+   {
+   opacity: 1;
+   transition:1s;
+   position: relative;
+   }
+
+   /*portfolio*/
+
+    .img-portfolio
+    {
+	padding: 5px;
+	cursor: pointer;
+	transition:0.4s;
+	opacity: 1;
+    }
 }
 
 @media only screen and (min-width: 600px)
@@ -101,6 +139,56 @@ img
 	.col-margin-11{margin-left:91.66%;}
 	.col-margin-12{margin-left:100%;}
 
+	/*nav bar*/
+	.nav-bar
+	{
+		padding: 30px;
+	}
+
+	/*about*/
+
+    .img-about
+    {
+	top: -30px;
+	transition:1s;
+	position: relative;
+    }
+
+
+    .about-text
+    {
+    text-align: center;
+    color: #616161;
+    padding: 15px;
+    opacity: 0;
+    transition:1s;
+    }
+
+   .member
+   {
+   opacity: 0;
+   bottom: -30px;
+   transition:1s;
+   position: relative;
+   }
+   
+   /*portfolio*/
+   
+   .img-portfolio:hover
+    {
+	padding:0;
+	filter:brightness(50%);
+    }
+
+    .img-portfolio
+    {
+	padding: 5px;
+	cursor: pointer;
+	transition:0.4s;
+	position: relative;
+	top: 30px;
+	opacity: 0;
+    }
 }
 
 
@@ -134,11 +222,11 @@ span
 	width: 100%;
 	height: 10px;
 	display: table;
-	padding: 30px;
 	position: fixed;
 	z-index: 100;
 	background-color: rgba(255,255,255,0);
 	transition:0.5s;
+	font-weight: bold;
 }
 
 .animation-nav
@@ -164,7 +252,7 @@ span
 {
 	list-style-type: none;
 	float: right;
-	padding: 0;
+	padding: 0px;
 }
 
 .nav-bar ul li
@@ -243,14 +331,9 @@ span
 	max-width: 1000px;
 	display: table;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
-.ABOUT-text
-{
-  text-align: center;
-  color: #616161;
-  padding: 15px;
-}
 
 
 .member img 
@@ -290,14 +373,175 @@ span
 	text-align: center;
 	width: 100%;
 	top: 50%;
-	transorm:translateY(-50%);
-	position: absolute;
+	position: relative;
+	transform:translateY(-50%);
+
 }
 
 
 
-.content
+/*portfolio*/
+
+.portfolio
 {
-	height: 800px;
-	background-color: #ddd;
+	max-width: 1000px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+
+
+
+
+
+    /***box portfolio***/
+
+.box
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 101;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.img-box
+{
+	width: 50%;
+	margin: auto ;
+	display: block;
+	position: relative;
+	top: 50%;
+	transform:translateY(-50%);
+}
+
+.close {
+    width: 100%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.close span 
+{
+	padding: 20px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.close span:hover
+{
+	color: #ccc;
+}
+
+/*contact*/
+
+.contact
+{
+	width: 100%;
+	height: 600px;
+	background-color: #b18a22;
+	position: relative;
+}
+
+.contact ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin-top: 40px;
+	margin-bottom: 30px;
+
+
+}
+
+.contact ul li
+{
+	float: left;
+	text-align: center;
+}
+
+.contact ul li a 
+{
+	text-decoration: none;
+    color:#fff;
+    opacity: 0.4;
+}
+
+
+
+.contact ul li a:hover
+{
+	opacity:1;
+} 
+
+.contact ul li a::after
+{
+	content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.contact ul li a:hover::after
+{
+	width: 100%;
+}
+
+.logo-contact
+{
+	width: 100px;
+	margin: 0 auto;
+	opacity: 0.5;
+	transition:0.4s;
+	cursor: pointer;
+}
+
+.logo-contact:hover
+{
+	opacity: 1;
+}
+
+.contact-information
+{
+	text-align: center;
+	color: #fff;
+	opacity: 0.8;
+	margin: 0 auto;
+	margin-top: 30px;
+    line-height: 200%;
+
+}
+
+.contact-information span 
+{
+	color: #fff;
+    cursor: pointer;
+    opacity: 1;	
+}
+
+.copyright
+{
+	text-align: center;
+	color: #fff;
+	opacity: 0.8;
+	margin: 0 auto;
+	margin-top: 50px;	
+}
+
+.social
+{
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 50px;
+}
+.social img 
+{
+	width: 50px;
+	margin: auto;
+	display: block;
 }

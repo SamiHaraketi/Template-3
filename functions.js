@@ -1,4 +1,4 @@
-/*menu*/
+/*menu & animation*/
 var $document = $(document);
 
 var home=$(".home").offset();
@@ -9,6 +9,9 @@ var contact=$(".contact").offset();
 
 
 $document.scroll(function() {
+
+
+  /******start scroll*******/
   if ($document.scrollTop() > 0) 
   {
      $(".nav-bar").addClass("animation-nav");
@@ -24,8 +27,8 @@ $document.scroll(function() {
   }
 
 
-  /*home enter*/
-  if (($document.scrollTop() > home.top) && ($document.scrollTop() < about.top) || ($document.scrollTop() == 0))
+  /*******home enter*********/
+  if (($document.scrollTop() > home.top) && ($document.scrollTop() < about.top-100) || ($document.scrollTop() == 0))
   {
       $(".nav-bar ul li:nth-child(1) ").css('text-decoration', 'line-through');
   }
@@ -35,11 +38,17 @@ $document.scroll(function() {
 
   }
 
-  /*about enter*/
+  /*******about enter*********/
 
-  if (($document.scrollTop() > about.top) && ($document.scrollTop() < portfolio.top)  )
+  if (($document.scrollTop() > about.top-100) && ($document.scrollTop() < portfolio.top-100)  )
   {
       $(".nav-bar ul li:nth-child(2) ").css('text-decoration', 'line-through');
+
+      $(".img-about ").css('top', '0px');
+      $(".member ").css({ "opacity": "1", "bottom": "0px" }) ;
+      $(".about-text ").css('opacity', '1');;
+
+
   }
   else
   {
@@ -47,10 +56,13 @@ $document.scroll(function() {
 
   }
 
-    /*porfolio enter*/
-  if (($document.scrollTop() > portfolio.top) && ($document.scrollTop() < contact.top) )
+    /*******porfolio enter*******/
+  if (($document.scrollTop() > portfolio.top-100) && ($document.scrollTop() < contact.top-100) )
   {
       $(".nav-bar ul li:nth-child(3) ").css('text-decoration', 'line-through');
+
+      $(".img-portfolio ").css({ "opacity": "1", "top": "0px" }) ;
+
   }
   else
   {
@@ -58,8 +70,8 @@ $document.scroll(function() {
 
   }
 
-      /*contact enter*/
-  if (($document.scrollTop() > contact.top)  )
+    /******contact enter*******/
+  if (($document.scrollTop() > contact.top-100)  )
   {
       $(".nav-bar ul li:nth-child(4) ").css('text-decoration', 'line-through');
   }
@@ -70,7 +82,7 @@ $document.scroll(function() {
   }
 });
 
-/*mooth scroll*/
+/*********mooth scroll*********/
 $('a[href*="#"]')
   .click(function(event) {
     if (
@@ -90,3 +102,48 @@ $('a[href*="#"]')
       }
     }
   });
+
+
+
+/*box img portfolio*/
+
+$('#img1').click(function(){
+      $("#box1").css('display', 'block');  
+}
+);
+
+$('#img2').click(function(){
+      $("#box2").css('display', 'block');  
+}
+);
+
+$('#img3').click(function(){
+      $("#box3").css('display', 'block');  
+}
+);
+
+$('#img4').click(function(){
+      $("#box4").css('display', 'block');  
+}
+);
+
+$('#img5').click(function(){
+      $("#box5").css('display', 'block');  
+}
+);
+
+$('#img6').click(function(){
+      $("#box6").css('display', 'block');  
+}
+);
+
+$('.close').click(function(){
+      $("#box1").css('display', 'none');  
+      $("#box2").css('display', 'none');  
+      $("#box3").css('display', 'none');  
+      $("#box4").css('display', 'none');  
+      $("#box6").css('display', 'none');  
+      $("#box6").css('display', 'none');  
+
+}
+);
