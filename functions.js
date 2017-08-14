@@ -43,17 +43,17 @@ $document.scroll(function() {
   if (($document.scrollTop() > about.top-100) && ($document.scrollTop() < portfolio.top-100)  )
   {
       $(".nav-bar ul li:nth-child(2) ").css('text-decoration', 'line-through');
-
-      $(".img-about ").css('top', '0px');
-      $(".member ").css({ "opacity": "1", "bottom": "0px" }) ;
-      $(".about-text ").css('opacity', '1');;
-
-
   }
   else
   {
       $(".nav-bar ul li:nth-child(2) ").css('text-decoration', 'none');
+  }
 
+  if (($document.scrollTop() > about.top-100) )
+  {
+      $(".img-about ").css('top', '0px');
+      $(".member ").css({ "opacity": "1", "bottom": "0px" }) ;
+      $(".about-text ").css('opacity', '1');;
   }
 
     /*******porfolio enter*******/
@@ -61,14 +61,20 @@ $document.scroll(function() {
   {
       $(".nav-bar ul li:nth-child(3) ").css('text-decoration', 'line-through');
 
-      $(".img-portfolio ").css({ "opacity": "1", "top": "0px" }) ;
-
   }
   else
   {
       $(".nav-bar ul li:nth-child(3) ").css('text-decoration', 'none');
 
   }
+
+  if (($document.scrollTop() > portfolio.top-600) )
+  {
+       $(".img-portfolio ").css({ "opacity": "1", "top": "0px" }) ;
+
+  }
+
+
 
     /******contact enter*******/
   if (($document.scrollTop() > contact.top-100)  )
@@ -142,7 +148,7 @@ $('.close').click(function(){
       $("#box2").css('display', 'none');  
       $("#box3").css('display', 'none');  
       $("#box4").css('display', 'none');  
-      $("#box6").css('display', 'none');  
+      $("#box5").css('display', 'none');  
       $("#box6").css('display', 'none');  
 
 }

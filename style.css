@@ -108,6 +108,11 @@ img
 	transition:0.4s;
 	opacity: 1;
     }
+
+    .img-box
+    {
+    	width: 80%;	
+    }
 }
 
 @media only screen and (min-width: 600px)
@@ -188,6 +193,23 @@ img
 	position: relative;
 	top: 30px;
 	opacity: 0;
+    }
+
+    .img-box
+    {
+    	width: 50%;	
+        animation-name:box;
+        animation-duration:1s;
+    }
+
+    @-webkit-keyframes box {
+    from {width: 0%;}
+    to {width: 50%;}
+    }
+
+    @keyframes box {
+    from {width: 0%;}
+    to {width: 50%;}
     }
 }
 
@@ -410,13 +432,14 @@ span
 
 .img-box
 {
-	width: 50%;
 	margin: auto ;
 	display: block;
 	position: relative;
 	top: 50%;
 	transform:translateY(-50%);
+
 }
+
 
 .close {
     width: 100%;
@@ -541,7 +564,13 @@ span
 }
 .social img 
 {
-	width: 50px;
+	width: 40px;
 	margin: auto;
 	display: block;
+	opacity: 0.5;
+	transition:1s;
+}
+.social img:hover
+{
+	opacity: 1;
 }
